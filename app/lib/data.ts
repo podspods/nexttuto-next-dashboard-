@@ -10,6 +10,11 @@ import {
 } from './definitions';
 import { formatCurrency } from './utils';
 import { unstable_noStore as noStore } from 'next/cache';
+
+
+
+// ----------------------------------------------------------------------------------
+
 export async function fetchRevenue() {
   // Add noStore() here to prevent the response from being cached.
   // This is equivalent to in fetch(..., {cache: 'no-store'}).
@@ -31,6 +36,7 @@ export async function fetchRevenue() {
     throw new Error('Failed to fetch revenue data.');
   }
 }
+// ----------------------------------------------------------------------------------
 
 export async function fetchLatestInvoices() {
   // Add noStore() here to prevent the response from being cached.
@@ -55,6 +61,7 @@ export async function fetchLatestInvoices() {
     throw new Error('Failed to fetch the latest invoices.');
   }
 }
+// ----------------------------------------------------------------------------------
 
 export async function fetchCardData() {
   // Add noStore() here to prevent the response from being cached.
@@ -95,6 +102,8 @@ export async function fetchCardData() {
   }
 }
 
+// ----------------------------------------------------------------------------------
+
 const ITEMS_PER_PAGE = 6;
 export async function fetchFilteredInvoices(
   query: string,
@@ -134,6 +143,7 @@ export async function fetchFilteredInvoices(
     throw new Error('Failed to fetch invoices.');
   }
 }
+// ----------------------------------------------------------------------------------
 
 export async function fetchInvoicesPages(query: string) {
   // Add noStore() here to prevent the response from being cached.
@@ -159,6 +169,7 @@ export async function fetchInvoicesPages(query: string) {
     throw new Error('Failed to fetch total number of invoices.');
   }
 }
+// ----------------------------------------------------------------------------------
 
 export async function fetchInvoiceById(id: string) {
   // Add noStore() here to prevent the response from being cached.
@@ -187,6 +198,7 @@ export async function fetchInvoiceById(id: string) {
     throw new Error('Failed to fetch invoice.');
   }
 }
+// ----------------------------------------------------------------------------------
 
 export async function fetchCustomers() {
 
@@ -206,6 +218,7 @@ export async function fetchCustomers() {
     throw new Error('Failed to fetch all customers.');
   }
 }
+// ----------------------------------------------------------------------------------
 
 export async function fetchFilteredCustomers(query: string) {
     // Add noStore() here to prevent the response from being cached.
@@ -242,6 +255,7 @@ export async function fetchFilteredCustomers(query: string) {
     throw new Error('Failed to fetch customer table.');
   }
 }
+// ----------------------------------------------------------------------------------
 
 export async function getUser(email: string) {
   try {
